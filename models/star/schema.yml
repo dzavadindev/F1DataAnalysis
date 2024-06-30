@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_drivers
+    description: "Dimension table of drivers, contains all relevant driver information"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+      - name: full_name
+        description: "Name and surname of the driver"
+      - name: code
+        description: "Three letter code of the driver"
+      - name: team
+        description: "Team the driver plays "
+        
+  - name: dim_teams
+    description: "Dimension table of teams, contains team name and id"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+      - name: name
+        description: "The name of the team"
+
+  - name: fct_incidents
+    description: "Fact table of incidents, contains all noted incidents from the data available from 2020 throughout 2023"
+    columns:
+      - name: race
+        description: "The primary key for this table"    
+      - name: driver_one_code
+        description: "The code of the first driver involved in the incident"
+      - name: driver_two_code
+        description: "The code of the second driver involved in the incident, if applicable"
+
+  - name: fct_points
+    description: "Fact table of points, contains all points earned by the teams so far in season 2023"
+    columns:
+      - name: team
+        description: "The primary key for this table"    
+      - name: points
+        description: "The amount of points the team had earned in a round"  

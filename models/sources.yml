@@ -1,0 +1,162 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "This source contains raw data ingested from various systems and logs."
+    database: database
+    schema: main
+    tables:
+      - name: raw_incidents
+        description: "Table containing incidents from race control logs."
+        columns:
+          - name: date
+            description: "The date of the incident."
+            data_tests:
+              - not_null
+          - name: time
+            description: "The time of the incident."
+            data_tests:
+              - not_null
+          - name: driver_one_num
+            description: "Number of the first driver involved in the incident."
+            data_tests:
+              - not_null
+          - name: driver_two_num
+            description: "Number of the second driver involved in the incident, if applicable."
+          - name: driver_one_code
+            description: "Code of the first driver involved in the incident."
+            data_tests:
+              - not_null
+          - name: driver_two_code
+            description: "Code of the second driver involved in the incident, if applicable."
+          - name: race
+            description: "Name of the race during which the incident occurred."
+            data_tests:
+              - not_null
+
+      - name: raw_races
+        description: "Table containing general race information from race control logs."
+        columns:
+          - name: date
+            description: "The date of the race."
+            data_tests:
+              - not_null
+          - name: race
+            description: "The name of the race."
+            data_tests:
+              - not_null
+
+      - name: raw_drivers
+        description: "Table containing driver information from API."
+        columns:
+          - name: id
+            description: "Unique identifier for the driver."
+            data_tests:
+              - unique
+              - not_null
+          - name: code
+            description: "Code of the driver."
+            data_tests:
+              - not_null
+          - name: number
+            description: "Number the driver for themselves"
+            data_tests:
+              - not_null
+          - name: first_name
+            description: "First name of the driver."
+            data_tests:
+              - not_null
+          - name: last_name
+            description: "Last name of the driver."
+            data_tests:
+              - not_null
+          - name: date_of_birth
+            description: "Drivers date of birth."
+            data_tests:
+              - not_null
+          - name: country
+            description: "Where the driver comes from."
+            data_tests:
+              - not_null
+
+      - name: raw_teams
+        description: "Table containing team information from API."
+        columns:
+          - name: id
+            description: "Unique identifier for the team."
+            data_tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Name of the team."
+            data_tests:
+              - not_null
+          - name: nationality
+            description: "Where the team originated from."
+            data_tests:
+              - not_null
+          - name: url
+            description: "A link to the teams wiki page."
+
+      - name: raw_constructors_results
+        description: "Table containing constructor results from CSV files."
+        columns:
+          - name: year
+            description: "When the points were earned"
+            data_tests:
+              - not_null
+          - name: round
+            description: "Another word for Grand Prix. Recent championships have 23 'rounds', being races on different circuits"
+            data_tests:
+              - not_null
+          - name: name
+            description: "Name of the Grand Prix."
+            data_tests:
+              - not_null
+          - name: date
+            description: "Date when the points were earned"
+            data_tests:
+              - not_null
+          - name: team
+            description: "The team that has earned the points"
+            data_tests:
+              - not_null
+          - name: points
+            description: "The amount of points the team has earned."
+            data_tests:
+              - not_null
+      - name: raw_drivers_teams
+        description: "Table containing drivers and their teams information from CSV files."
+        columns:
+          - name: year
+            description: "When the driver raced for that team."
+            data_tests:
+              - not_null
+          - name: race_nr
+            description: "The 'round in that year the driver raced for that team'."
+            data_tests:
+              - not_null
+          - name: driver
+            description: "The drivers name."
+            data_tests:
+              - not_null
+          - name: "name"
+            description: "The name of the team the drivers raced for."
+            data_tests:
+              - not_null
+
+      - name: raw_races_carried_out
+        description: "Table containing year and the amount of races that years championship spanned."
+        columns:
+          - name: year
+            description: "When the championship happened."
+            data_tests:
+              - not_null
+          - name: number_of_races
+            description: "How much races that year had."
+            data_tests:
+              - not_null
+          - name: first_place_points
+            description: "How much points you would earn for scoring the first place in a race of that year."
+            data_tests:
+              - not_null

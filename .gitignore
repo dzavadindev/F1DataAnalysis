@@ -1,0 +1,109 @@
+# General
+.DS_Store
+Thumbs.db
+raw/**
+!raw/api
+!raw/api/**
+db/database.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+
+# dbt
+dbt_modules/
+target/
+logs/
+*.log
+
+# Evidence BI
+.evidence/
+.evidence-debug/
+evidence_project/.parcel-cache/
+evidence_project/dist/
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Miscellaneous
+*.swp
+*~
+*.swo
+*.tmp
+
+# MacOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~ 
+.nfs*
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+coverage/
+*.lcov
+
+# System files
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+.tox/
+.nox/
+.coverage
+.cache
+.pytest_cache/
+htmlcov/
+
+# Ignore SvelteKit build artifacts
+.svelte-kit
+build
+
+# Ignore static data directory
+static/data
+
+# Ignore configuration files
+*.options.yaml

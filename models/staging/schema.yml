@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: stg_drivers
+    description: "Renaming and type fixing of the raw drivers data"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: drivers_number
+        description: "Drivers unique number. Usually displayed on their form or car"
+        data_tests:
+          - unique
+          - not_null
+      - name: code
+        description: "Unique* 3 letter code assigned to every driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: full_name
+        description: "Drivers full name"
+        data_tests:
+          - unique
+          - not_null
+      - name: date_of_birth
+        description: "Drivers date of birth"
+        data_tests:
+          - not_null
+      - name: country
+        description: "Where the driver comes from"
+        data_tests:
+          - not_null
+
+  - name: stg_incidents
+    description: "Renaming and type fixing of the raw incidents data"
+    columns:
+      - name: date
+        description: "The date of an incident occurring"
+        data_tests:
+          - not_null
+      - name: time
+        description: "The time the incident occurred"
+        data_tests:
+          - not_null
+      - name: driver_one_num
+        description: "The number of the first driver involved in an incident"
+        data_tests:
+          - not_null
+      - name: driver_two_num
+        description: "The number of the second driver involved in an incident. May be empty, if an incident is a crash with the environment"
+      - name: driver_one_code
+        description: "The code of the first driver involved in an incident"
+        data_tests:
+          - not_null
+      - name: driver_two_code
+        description: "The code of the second driver involved in an incident. May be empty, if an incident is a crash with the environment"
+      - name: race
+        description: "The Gran Prix when the incident happened"
+        data_tests:
+          - not_null
+
+  - name: stg_constructors_results
+    description: "Type fixing of the raw constructor results data"
+    columns:
+      - name: year
+        description: "Year when the points were earned in"
+        data_tests:
+          - not_null
+      - name: round
+        description: "'Round' is the race of the year for which the points were earned"
+        data_tests:
+          - not_null
+      - name: race_name
+        description: "The name of the Grand Prix the points were earned in"
+        data_tests:
+          - not_null
+      - name: team
+        description: "The team of constructors that has earned the points"
+        data_tests:
+          - not_null
+      - name: points
+        description: "The amount of points a team has earned"
+        data_tests:
+          - not_null
+
+  - name: stg_races
+    description: "Type fixing of the raw races data"
+    columns:
+      - name: race
+        description: "The name of the Grand Prix"
+        data_tests:
+          - not_null
+      - name: date
+        description: "When the race of that Grand Prix happened"
+        data_tests:
+          - not_null
+
+  - name: stg_races_carried_out
+    description: "Type fixing of the raw races carried out data"
+    columns:
+      - name: year
+        description: "Year the Championship was carried out"
+        data_tests:
+          - not_null
+      - name: races_amount
+        description: "How much races did the Championship have"
+        data_tests:
+          - not_null
+      - name: first_place_points
+        description: "How much points a constructors/drivers will get for finishing first"
+        data_tests:
+          - not_null
+
+  - name: stg_teams
+    description: "Name changes to the teams"
+    columns:
+      - name: id
+        description: "Unique identified for the team`"
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: "The name of the team"
+        data_tests:
+          - not_null
+      - name: country
+        description: "Teams country of origin"
+        data_tests:
+          - not_null

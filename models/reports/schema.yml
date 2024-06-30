@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: rpt_incidents
+    description: "Final table containing all drivers and their respective incident count"
+    columns:
+      - name: total_incidents
+        description: "Total amount of incidents the driver was involved in from 2020 to 2023."
+      - name: full_name
+        description: "Drivers first and last name."
+
+  - name: rpt_possible_winners
+    description: "Calculations of the potential points a team can score if they win all the remaining races in the season."
+    columns:
+      - name: year
+        description: "The year of the championship."
+      - name: team
+        description: "The name of the team."
+      - name: potential_points
+        description: "The potential points a team can score if they win all the remaining races in the season."
+
+  - name: rpt_predictions
+    description: "Predictions the final points and ranking of teams based on their average performance so far."
+    columns:
+      - name: year
+        description: "The year of the championship."
+      - name: team
+        description: "The name of the team."
+      - name: predicted_points
+        description: "The predicted points of a team based on their average points earned so far and the number of races remaining."
+      - name: rank
+        description: "The predicted rank of the team based on their predicted points. "

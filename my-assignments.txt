@@ -1,0 +1,5 @@
+F7: How often has each driver been involved in an ‘incident’ in the past racing year according to race control?
+
+B2: Which constructors can still win the world championship at the moment in the last racing season for which we have data? (https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems#Points_scoring_systems)
+
+M6: During a race, drivers have a choice of five types of tires (compounds): Soft, Medium, Hard, Intermediate and Wet. What is the best tire given a certain weather situation (AirTemp, Humidity, etc.) on a certain circuit? (Naive Bayes)

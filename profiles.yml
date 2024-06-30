@@ -1,0 +1,9 @@
+# this needs to be moved to your %userprofile%/.dbt/profiles.yml apparently?
+# it works without being moved to user profile, so I don't know 
+
+default:
+  target: dev 
+  outputs:
+    dev:
+      type: duckdb
+      path: db/database.db

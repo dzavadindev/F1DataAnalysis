@@ -1,0 +1,21 @@
+[tool.poetry]
+package-mode = false
+name = "exam-assignment-2"
+version = "0.1.0"
+description = ""
+authors = ["Craig <c.a.bradley@saxion.nl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+evidence = "^2.2.0"
+pandas = "^2.2.2"
+dbt = "^1.0.0.37.15"
+dbt-duckdb = "^1.8.1"
+duckdb = "0.10.2"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

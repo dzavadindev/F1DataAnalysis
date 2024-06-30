@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: int_races
+    description: "An intermediate table, matching races to how much points they earn for 1 place and how many races happened that year"
+    columns:
+      - name: year
+        description: "Year the Championship was carried out"
+        data_tests:
+          - not_null
+      - name: races_amount
+        description: "How much races did the Championship have"
+        data_tests:
+          - not_null
+      - name: first_place_points
+        description: "How much points a constructors/drivers will get for finishing first"
+        data_tests:
+          - not_null
+      

@@ -1,0 +1,29 @@
+# Explanation
+
+This pages aims to answer the question: "**How often has each driver been involved in an incident in the past racing year according to race control?**". We will use drivers information and the race control logs to determine the number of crashes a driver was involved throughout the 2023 racing season. 
+
+``` sql incidents
+  select * from reports.incidents where year = 2022
+```
+
+# Visualization
+
+Firstly, the number of incidents to driver will be presented as a bar chart, showcasing how every one driver compares to another.
+
+<BarChart 
+    data={incidents}
+    x=full_name
+    y=total_incidents
+    swapXY=true
+    title="Difference in incident rate for drivers (2023)"
+/>
+
+For a more clear view of the statistics, refer to this data table
+
+<DataTable data={incidents}> 
+  <Column id=full_name title="Driver"/> 
+  <Column id=team title="Team"/> 
+	<Column id=total_incidents title="Number of Incidents"/> 
+</DataTable>
+
+Referring to the data presented, its possible to determine who from the F1 roster has been involved in the most incidents, and how they compare to other drivers   
