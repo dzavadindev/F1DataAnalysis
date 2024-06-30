@@ -2,10 +2,11 @@ with source as (
     select * from {{ source('raw_data', 'raw_drivers_teams') }}
 )
 
-select 
+select
     driver as driver_name,
     name as team,
-    cast(year as INT)
+    cast(year as INT) as year,
+    cast(race_nr as INT) as race_nr
 from source
 
 {% if is_incremental() %}

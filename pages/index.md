@@ -1,12 +1,17 @@
 # How to run the data processing 'pipeline' 
 
-First ensure that you have python version 3.11 or above
-Then enter your terminal (suggest running everything via WSL) and run the following:
+First ensure that you have python version 3.11 or above and poetry installed
+Then enter your terminal (suggest running everything via WSL) and run the following commands:
 
 ``` bash
-python --version or python3.11 --version
-poetry env use $(which python)
-poetry install
+python --version
+./run.sh init
+npm run dev
+```
+
+Subsequential runs to update data, rerun models and resource evidence can be run with 
+
+``` bash
 ./run.sh
 ```
 
